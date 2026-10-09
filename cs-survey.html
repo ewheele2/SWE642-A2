@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CS Survey</title>
+<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link href="stylesheet.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.gmu.edu/">GMU</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cs-info.html">Dept Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cs-survey.html">Survey</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br>
+
+    <script src="script.js"></script>
+    <br>
+
+    <h1 class="h1_headers top-heading-box container">Provide Your Feedback</h1>
+    <br>
+    <br>
+    <h2 class="headers container">Please Provide Feedback About Your Visit!</h2>
+
+    <!--Make this text smaller with CSS -->
+    <p class="container" id="form-disclaimer"><i>Fields noted with * are required.</i></p>
+
+    <form class="container"  action="paceholder" method="POST">
+        <h3 class="headers">Enter Your Information</h3>
+        <!--User details -->
+        <label class="form-label" for="username">Username*</label><br>
+        <input class="form-control" type="text" id="username" name="username" autocomplete="username" placeholder="e.g. jondoe123" autofocus required><br>
+
+        <label class="form-label" for="address">Street Address*</label><br>
+        <input class="form-control" type="text" id="address" name="address" autocomplete="street-address" placeholder="e.g. 123 Cherry Street" required><br>
+
+        <label class="form-label" for="city">City*</label><br>
+        <input class="form-control" type="text" id="city" name="city" autocomplete="address-level2" placeholder="e.g. Fairfax" required><br>
+
+        <label class="form-label" for="state">State*</label><br>
+        <input class="form-control" type="text" id="state" name="state" autocomplete="address-level1" placeholder="e.g. Virginia" required><br>
+
+        <label class="form-label" for="zip">Zip Code*</label><br>
+        <input class="form-control" type="text" id="zip" name="zip" autocomplete="postal-code" placeholder="e.g. 12345" required><br>
+
+        <label class="form-label" for="phone">Phone Number</label><br>
+        <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 555-555-5555"><br>
+
+        <label class="form-label" for="email">E-Mail Address*</label><br>
+        <input class="form-control" type="email" id="email" name="email" autocomplete="email" placeholder="e.g. username@email.com" required><br>
+
+        <label class="form-label" for="url">URL</label><br>
+        <input class="form-control" type="url" id="url" name="url" placeholder="e.g. domainname.com""><br>
+
+        <label class="form-label" for="date">Date of Survey*</label><br>
+        <input class="form-control" type="date" id="date" name="date" required><br>
+        <br>
+        <h3 class="headers">Tell Us What You Liked Most*</h3>
+            <!--Checkbox selection for what students liked -->
+        <input class="form-check-input" type="checkbox" id="students" name="liked-most" value="students">
+        <label class="form-check-label" for="students">Students</label><br>
+
+        <input class="form-check-input" type="checkbox" id="location" name="liked-most" value="location">
+        <label class="form-check-label" for="location">Location</label><br>
+
+        <input class="form-check-input" type="checkbox" id="campus" name="liked-most" value="campus">
+        <label class="form-check-label" for="campus">Campus</label><br>
+
+        <input class="form-check-input" type="checkbox" id="atmosphere" name="liked-most" value="atmosphere">
+        <label class="form-check-label" for="atmosphere">Atmosphere</label><br>
+
+        <input class="form-check-input" type="checkbox" id="dorms" name="liked-most" value="dorms">
+        <label class="form-check-label" for="dorms">Dorm Rooms</label><br>
+
+        <input class="form-check-input" type="checkbox" id="sports" name="liked-most" value="sports">
+        <label class="form-check-label" for="sports">Sports</label><br>
+        <br>
+        <h3 class="headers">How Did You Become Interested in George Mason University?*</h3>
+
+        <!--Radio button selection for what interested prospective student in GMU -->
+        <input class="form-check-input" type="radio" id="friends" name="interest" value="friends">
+        <label class="form-check-label" for="friends">Friends</label><br>
+
+        <input class="form-check-input" type="radio" id="television" name="interest" value="television">
+        <label class="form-check-label" for="television">Television</label><br>
+
+        <input class="form-check-input" type="radio" id="internet" name="interest" value="internet">
+        <label class="form-check-label" for="internet">Internet</label><br>
+
+        <input class="form-check-input" type="radio" id="other" name="interest" value="other">
+        <label class="form-check-label" for="other">Other</label><br>
+        <br>
+        <h3 class="headers">Enter Your High-School Graduation Month and Year*</h3>
+
+        <!--Datalist for graduation month -->
+        <div class="row g-3">
+            <div class="col">
+                <label for="grad-month">Enter a Month:</label>
+                <input id="grad-month" name="grad-month" list="grad-month-list">
+
+                <datalist id="grad-month-list">
+                    <option value="January">
+                    <option value="February">
+                    <option value="March">
+                    <option value="April">
+                    <option value="May">
+                    <option value="June">
+                    <option value="July">
+                    <option value="August">
+                    <option value="September">
+                    <option value="October">
+                    <option value="November">
+                    <option value="December">
+                </datalist>
+            </div>
+            <div class="col">
+                <label for="grad-year">Enter Year:</label>
+                <input type="text" id="grad-year" name="grad-year">
+            </div>
+        </div>
+        <br>
+        <h3 class="headers">What is the Likelihood of Recommending George Mason to Other Prospective Students?*</h3>
+        <br>
+        <!--Dropdown list to select likelihood this prospective student will recommend GMU -->
+        <label for="recommend">Please Select a Likelihood</label>
+
+        <select name="recommend" id="recommend">
+            <option value="" disable selected>Select and option...</option>
+            <option value="very-likely">Very Likely</option>
+            <option value="likely">Likely</option>
+            <option value="unlikely">Unlikely</option>
+        </select>
+        <br>
+            <!--Temporary anchor to have a submitted page appear - will remove and change button type to submit when there's backend connectivity -->
+        <a href="submitted.html">
+            <button type="button" class="btn btn-primary">Submit Form</button>
+        </a>
+
+    </form>
+    <br>
+
+
+</body>
