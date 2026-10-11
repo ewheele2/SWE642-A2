@@ -44,7 +44,7 @@
     <!--Make this text smaller with CSS -->
     <p class="container" id="form-disclaimer"><i>Fields noted with * are required.</i></p>
 
-    <form class="container"  action="paceholder" method="POST">
+    <form class="container"  action="submitted.html" method="POST">
         <h3 class="headers">Enter Your Information</h3>
         <!--User details -->
         <label class="form-label" for="username">Username*</label><br>
@@ -53,14 +53,17 @@
         <label class="form-label" for="address">Street Address*</label><br>
         <input class="form-control" type="text" id="address" name="address" autocomplete="street-address" placeholder="e.g. 123 Cherry Street" required><br>
 
-        <label class="form-label" for="city">City*</label><br>
-        <input class="form-control" type="text" id="city" name="city" autocomplete="address-level2" placeholder="e.g. Fairfax" required><br>
+        <label class="form-label" for="zip">Zip Code*</label>
+        <span id="zip-error" class="text-danger ms-2 fw-bold"></span><br>
+        <input class="form-control" type="text" id="zip" name="zip" autocomplete="postal-code" placeholder="e.g. 22030" required><br>
 
-        <label class="form-label" for="state">State*</label><br>
-        <input class="form-control" type="text" id="state" name="state" autocomplete="address-level1" placeholder="e.g. Virginia" required><br>
+        <div class="mb-3 p-2 bg-light border rounded">
+            <strong>City:</strong> <span id="city-placeholder"></span>
+        </div>
 
-        <label class="form-label" for="zip">Zip Code*</label><br>
-        <input class="form-control" type="text" id="zip" name="zip" autocomplete="postal-code" placeholder="e.g. 12345" required><br>
+        <div class="mb-3 p-2 bg-light border rounded">
+            <strong>State:</strong> <span id="state-placeholder"></span>
+        </div>
 
         <label class="form-label" for="phone">Phone Number</label><br>
         <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 555-555-5555"><br>
@@ -70,6 +73,19 @@
 
         <label class="form-label" for="url">URL</label><br>
         <input class="form-control" type="url" id="url" name="url" placeholder="e.g. domainname.com""><br>
+
+        <label class="form-label" for="data-input">Enter 10 comma-separated numbers between 1-100*</label>
+        <span id="data-error" class="text-danger ms-2 fw-bold"></span>
+        <input class="form-control" type="text" id="data-input" name="data-input" placeholder="ex. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10" required>
+
+        <div class="row mb-3">
+            <div class="col bg-light border rounded mx-3">
+                Average: <span id="average-placeholder">0</span>
+            </div>
+            <div class="col bg-light border rounded mx-3">
+                Maximum: <span id="maximum-placeholder">0</span>
+            </div>
+        </div>
 
         <label class="form-label" for="date">Date of Survey*</label><br>
         <input class="form-control" type="date" id="date" name="date" required><br>
@@ -139,21 +155,26 @@
         </div>
         <br>
         <h3 class="headers">What is the Likelihood of Recommending George Mason to Other Prospective Students?*</h3>
-        <br>
-        <!--Dropdown list to select likelihood this prospective student will recommend GMU -->
-        <label for="recommend">Please Select a Likelihood</label>
+                <br>
+                <!--Dropdown list to select likelihood this prospective student-->
+                <select class="form-select" id="recommend" name="recommend" required>
+                    <option value="" disabled selected>Choose an option</option>
+                    <option value="Very Likely">Very Likely</option>
+                    <option value="Likely">Likely</option>
+                    <option value="Unlikely">Unlikely</option>
+                </select>
+                <br>
 
-        <select name="recommend" id="recommend">
-            <option value="" disable selected>Select and option...</option>
-            <option value="very-likely">Very Likely</option>
-            <option value="likely">Likely</option>
-            <option value="unlikely">Unlikely</option>
-        </select>
-        <br>
-            <!--Temporary anchor to have a submitted page appear - will remove and change button type to submit when there's backend connectivity -->
+                <!-- Added explicit Submission and Reset control elements -->
+                <div class="mt-4 mb-5">
+                    <button type="button" id="submitBtn" class="btn btn-primary me-2">Submit</button>
+                    <button type="reset" id="resetBtn" class="btn btn-secondary">Reset</button>
+                </div>
+            <!--Temporary anchor to have a submitted page appear - will remove and change button type to submit when there's backend connectivity
         <a href="submitted.html">
             <button type="button" class="btn btn-primary">Submit Form</button>
         </a>
+        -->
 
     </form>
     <br>
